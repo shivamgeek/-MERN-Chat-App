@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import io, { Socket } from "socket.io-client";
 
 const BASE_SERVER_URL =
-  import.meta.env.MODE === "development" ? "http://localhost:5001/api" : "/api";
+  import.meta.env.MODE === "production" ? "/" : "http://localhost:5001";
 
 export type AuthUser = {
   _id: string;

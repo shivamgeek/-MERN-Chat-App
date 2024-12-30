@@ -25,7 +25,7 @@ expressApp.use("/api/messages", messageRoutes);
 const port = process.env.SERVER_PORT || 5001;
 const _dirname = path.resolve();
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
   expressApp.use(express.static(path.join(_dirname, "../frontend/dist")));
   expressApp.get("*", (req, res) => {
     res.sendFile(path.join(_dirname, "../frontend/dist/index.html"));
